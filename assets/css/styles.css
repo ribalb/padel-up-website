@@ -414,7 +414,39 @@ html[dir="rtl"] .ticks li::before{ border-inline-end:1.8px solid var(--accent); 
 .rate__price small{ color:var(--dim); font-size:.85rem; }
 .rate .ticks{ margin-bottom:24px; }
 .rate .btn{ margin-top:auto; }
-.rates__note{ margin-top:24px; text-align:center; color:var(--dim); font-size:.92rem; }
+
+/* price tables inside a rate card */
+.pricegroup{ margin-top:22px; }
+.pricegroup + .pricegroup{ margin-top:20px; }
+.pricegroup h4{
+  font-size:.72rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent-text); padding-bottom:9px; margin-bottom:4px;
+  border-bottom:1px solid var(--line);
+}
+html[lang="ar"] .pricegroup h4{ letter-spacing:0; }
+.pricelist li{
+  display:grid; grid-template-columns:1fr auto; align-items:baseline; gap:4px 14px;
+  padding:11px 0;
+}
+.pricelist li + li{ border-top:1px solid var(--line); }
+.pricelist span{ color:var(--muted); font-size:.94rem; }
+.pricelist b{
+  font-size:1.32rem; font-weight:700; letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums; white-space:nowrap;
+}
+.pricelist b small{ font-size:.72rem; font-weight:500; color:var(--dim); margin-inline-start:4px; }
+/* the "250 per booking" unit price sits under the total, spanning both columns */
+.pricelist em{
+  grid-column:1 / -1; font-style:normal; font-size:.78rem; color:var(--dim); margin-top:-4px;
+}
+.rate--hero .pricelist b{ color:var(--text); }
+
+.rates__note{
+  margin-top:26px; text-align:center; color:var(--dim); font-size:.92rem;
+  display:flex; gap:8px; justify-content:center; flex-wrap:wrap;
+}
+.rates__note a{ color:var(--accent-text); }
+.rates__note a:hover{ text-decoration:underline; }
 
 /* ---------- gallery ---------- */
 .gallery{

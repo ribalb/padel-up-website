@@ -4,12 +4,12 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Padel UP · بادل اب — Padel, Football & Table Tennis in Diriyah, Riyadh</title>
-<meta name="description" content="Padel UP is a sports club in Al Diriyah Al Jadidah, Riyadh — padel courts, football pitches and table tennis. Rated 4.4 by 261 visitors. Book your court today." />
+<meta name="description" content="Padel UP is a sports club in Al Diriyah Al Jadidah, Riyadh — padel courts, football pitches and table tennis, plus private and group coaching. Rated 4.4 by 261 visitors. Open daily 3 PM – 3 AM." />
 <meta name="theme-color" content="#05070f" />
 
 <meta property="og:type" content="business.business" />
 <meta property="og:title" content="Padel UP · بادل اب — Sports Club in Diriyah, Riyadh" />
-<meta property="og:description" content="Padel courts, football pitches and table tennis in Al Diriyah Al Jadidah. Open daily from 4 PM." />
+<meta property="og:description" content="Padel courts, football pitches and table tennis in Al Diriyah Al Jadidah. Court packages, private and group coaching. Open daily 3 PM – 3 AM." />
 <meta property="og:locale" content="en_US" />
 <meta property="og:locale:alternate" content="ar_SA" />
 <!-- Absolute URLs are required here. Update both if the site moves to a custom domain. -->
@@ -48,8 +48,7 @@
     "bestRating": "5"
   },
   "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday"], "opens": "16:00", "closes": "03:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday","Friday","Saturday"], "opens": "15:00", "closes": "04:00" }
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "15:00", "closes": "03:00" }
   ],
   "sameAs": ["https://www.instagram.com/padel_up/", "https://playtomic.com/clubs/padel-up-riyadh"],
   "potentialAction": {
@@ -61,7 +60,8 @@
     },
     "result": { "@type": "Reservation", "name": "Court booking" }
   },
-  "sport": ["Padel", "Football", "Table Tennis"]
+  "sport": ["Padel", "Football", "Table Tennis"],
+  "amenityFeature": [{ "@type": "LocationFeatureSpecification", "name": "Padel coaching and academy", "value": true }]
 }
 </script>
 </head>
@@ -157,7 +157,7 @@
       <div class="panel">
         <div class="panel__row">
           <span class="panel__label" data-en="Today" data-ar="اليوم">Today</span>
-          <span class="pill pill--live"><span class="pill__dot"></span><span id="todayHours" data-en="Open from 4 PM" data-ar="نفتح ٤ عصراً">Open from 4 PM</span></span>
+          <span class="pill pill--live"><span class="pill__dot"></span><span id="todayHours" data-en="Open from 3 PM" data-ar="نفتح ٣ عصراً">Open from 3 PM</span></span>
         </div>
 
         <div class="panel__courts">
@@ -314,7 +314,7 @@
       <li class="step reveal">
         <span class="step__num">01</span>
         <h3 data-en="Pick your sport &amp; time" data-ar="اختر رياضتك ووقتك">Pick your sport &amp; time</h3>
-        <p data-en="Choose padel, football or table tennis and the slot that suits your group. We open at 4 PM Sunday to Wednesday, and 3 PM Thursday to Saturday." data-ar="اختر البادل أو كرة القدم أو تنس الطاولة والوقت المناسب لمجموعتك. نفتح ٤ عصراً من الأحد للأربعاء، و٣ عصراً من الخميس للسبت.">Choose padel, football or table tennis and the slot that suits your group. We open at 4 PM Sunday to Wednesday, and 3 PM Thursday to Saturday.</p>
+        <p data-en="Choose padel, football or table tennis and the slot that suits your group. We are open every day from 3 PM until 3 AM." data-ar="اختر البادل أو كرة القدم أو تنس الطاولة والوقت المناسب لمجموعتك. نفتح يومياً من ٣ عصراً حتى ٣ فجراً.">Choose padel, football or table tennis and the slot that suits your group. We are open every day from 3 PM until 3 AM.</p>
       </li>
       <li class="step reveal">
         <span class="step__num">02</span>
@@ -335,49 +335,122 @@
   <div class="container">
     <header class="sechead reveal">
       <p class="kicker" data-en="Rates" data-ar="الأسعار">Rates</p>
-      <h2 class="sectitle" data-en="Simple pricing, per court" data-ar="أسعار واضحة، لكل ملعب">Simple pricing, per court</h2>
-      <p class="secsub" data-en="Prices are per court, not per player — split it however you like." data-ar="الأسعار لكل ملعب وليس لكل لاعب — قسّموها بينكم كيف ما تحبون.">Prices are per court, not per player — split it however you like.</p>
+      <h2 class="sectitle" data-en="Packages &amp; coaching" data-ar="الباقات والتدريب">Packages &amp; coaching</h2>
+      <p class="secsub" data-en="Buy court time in bulk and the price per booking drops. Coaching is priced per player, so the bigger your group the less each of you pays." data-ar="احجز وقت الملعب بالجملة وينزل سعر الحجز الواحد. التدريب بسعر لكل لاعب، فكل ما كبرت مجموعتك قل ما يدفعه كل واحد.">Buy court time in bulk and the price per booking drops. Coaching is priced per player, so the bigger your group the less each of you pays.</p>
     </header>
 
-    <!-- TODO(owner): replace the SAR figures below with your real rates. See README.md -->
     <div class="rates">
-      <article class="rate reveal">
-        <h3 data-en="Off-peak padel" data-ar="بادل خارج الذروة">Off-peak padel</h3>
-        <p class="rate__when" data-en="4 PM – 7 PM" data-ar="٤ عصراً – ٧ مساءً">4 PM – 7 PM</p>
-        <p class="rate__price"><span class="cur">SAR</span><span class="num">120</span><small data-en="/ 60 min" data-ar="/ ٦٠ دقيقة">/ 60 min</small></p>
-        <ul class="ticks">
-          <li data-en="Up to 4 players" data-ar="حتى ٤ لاعبين">Up to 4 players</li>
-          <li data-en="Rackets available" data-ar="مضارب متوفرة">Rackets available</li>
-        </ul>
-        <a class="btn btn--ghost btn--full" href="https://playtomic.com/clubs/padel-up-riyadh" target="_blank" rel="noopener" data-en="Book this" data-ar="احجز الآن">Book this</a>
-      </article>
-
+      <!-- Court packages -->
       <article class="rate rate--hero reveal">
-        <span class="tag tag--solid" data-en="Popular" data-ar="الأكثر طلباً">Popular</span>
-        <h3 data-en="Prime-time padel" data-ar="بادل وقت الذروة">Prime-time padel</h3>
-        <p class="rate__when" data-en="7 PM – close" data-ar="٧ مساءً – الإغلاق">7 PM – close</p>
-        <p class="rate__price"><span class="cur">SAR</span><span class="num">160</span><small data-en="/ 60 min" data-ar="/ ٦٠ دقيقة">/ 60 min</small></p>
-        <ul class="ticks">
-          <li data-en="Up to 4 players" data-ar="حتى ٤ لاعبين">Up to 4 players</li>
-          <li data-en="Full floodlighting" data-ar="إضاءة كاملة">Full floodlighting</li>
-          <li data-en="90-minute slots available" data-ar="تتوفر حجوزات ٩٠ دقيقة">90-minute slots available</li>
-        </ul>
-        <a class="btn btn--primary btn--full" href="https://playtomic.com/clubs/padel-up-riyadh" target="_blank" rel="noopener" data-en="Book this" data-ar="احجز الآن">Book this</a>
+        <span class="tag tag--solid" data-en="Best value" data-ar="الأفضل قيمة">Best value</span>
+        <h3 data-en="Court packages" data-ar="باقات الحجز">Court packages</h3>
+        <p class="rate__when" data-en="Prepaid blocks of bookings" data-ar="حجوزات مدفوعة مسبقاً">Prepaid blocks of bookings</p>
+
+        <div class="pricegroup">
+          <h4 data-en="60 minutes" data-ar="٦٠ دقيقة">60 minutes</h4>
+          <ul class="pricelist">
+            <li>
+              <span data-en="10 bookings" data-ar="١٠ حجوزات">10 bookings</span>
+              <b>2,500 <small data-en="SAR" data-ar="ريال">SAR</small></b>
+              <em data-en="250 per booking" data-ar="٢٥٠ ريال للحجز">250 per booking</em>
+            </li>
+            <li>
+              <span data-en="20 bookings" data-ar="٢٠ حجز">20 bookings</span>
+              <b>4,600 <small data-en="SAR" data-ar="ريال">SAR</small></b>
+              <em data-en="230 per booking" data-ar="٢٣٠ ريال للحجز">230 per booking</em>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pricegroup">
+          <h4 data-en="90 minutes" data-ar="٩٠ دقيقة">90 minutes</h4>
+          <ul class="pricelist">
+            <li>
+              <span data-en="10 bookings" data-ar="١٠ حجوزات">10 bookings</span>
+              <b>3,200 <small data-en="SAR" data-ar="ريال">SAR</small></b>
+              <em data-en="320 per booking" data-ar="٣٢٠ ريال للحجز">320 per booking</em>
+            </li>
+            <li>
+              <span data-en="20 bookings" data-ar="٢٠ حجز">20 bookings</span>
+              <b>5,900 <small data-en="SAR" data-ar="ريال">SAR</small></b>
+              <em data-en="295 per booking" data-ar="٢٩٥ ريال للحجز">295 per booking</em>
+            </li>
+          </ul>
+        </div>
+
+        <a class="btn btn--primary btn--full" href="https://wa.me/966506940479" target="_blank" rel="noopener" data-en="Ask about packages" data-ar="استفسر عن الباقات">Ask about packages</a>
       </article>
 
+      <!-- Private coaching -->
       <article class="rate reveal">
-        <h3 data-en="Football pitch" data-ar="ملعب كرة قدم">Football pitch</h3>
-        <p class="rate__when" data-en="All evening" data-ar="طوال المساء">All evening</p>
-        <p class="rate__price"><span class="cur">SAR</span><span class="num">200</span><small data-en="/ 60 min" data-ar="/ ٦٠ دقيقة">/ 60 min</small></p>
-        <ul class="ticks">
-          <li data-en="5-a-side pitch" data-ar="ملعب خماسي">5-a-side pitch</li>
-          <li data-en="Balls &amp; bibs included" data-ar="كرات وفانلات مشمولة">Balls &amp; bibs included</li>
-        </ul>
-        <a class="btn btn--ghost btn--full" href="https://playtomic.com/clubs/padel-up-riyadh" target="_blank" rel="noopener" data-en="Book this" data-ar="احجز الآن">Book this</a>
+        <h3 data-en="Private coaching" data-ar="تدريب خاص">Private coaching</h3>
+        <p class="rate__when" data-en="One 60-minute session with a coach" data-ar="حصة تدريب ٦٠ دقيقة مع مدرب">One 60-minute session with a coach</p>
+
+        <div class="pricegroup">
+          <ul class="pricelist">
+            <li>
+              <span data-en="1 player" data-ar="لاعب واحد">1 player</span>
+              <b>380 <small data-en="SAR" data-ar="ريال">SAR</small></b>
+            </li>
+            <li>
+              <span data-en="2 players" data-ar="لاعبان">2 players</span>
+              <b>200 <small data-en="SAR / player" data-ar="ريال لكل لاعب">SAR / player</small></b>
+            </li>
+            <li>
+              <span data-en="3 players" data-ar="ثلاثة لاعبين">3 players</span>
+              <b>150 <small data-en="SAR / player" data-ar="ريال لكل لاعب">SAR / player</small></b>
+            </li>
+            <li>
+              <span data-en="4 players" data-ar="أربعة لاعبين">4 players</span>
+              <b>130 <small data-en="SAR / player" data-ar="ريال لكل لاعب">SAR / player</small></b>
+            </li>
+          </ul>
+        </div>
+
+        <a class="btn btn--ghost btn--full" href="https://wa.me/966506940479" target="_blank" rel="noopener" data-en="Book a session" data-ar="احجز حصة">Book a session</a>
+      </article>
+
+      <!-- Group coaching -->
+      <article class="rate reveal">
+        <h3 data-en="Group coaching" data-ar="باقات التدريب">Group coaching</h3>
+        <p class="rate__when" data-en="Multi-session blocks, priced per player" data-ar="باقات حصص، السعر لكل لاعب">Multi-session blocks, priced per player</p>
+
+        <div class="pricegroup">
+          <h4 data-en="3 players" data-ar="٣ لاعبين">3 players</h4>
+          <ul class="pricelist">
+            <li>
+              <span data-en="5 sessions" data-ar="٥ حصص">5 sessions</span>
+              <b>700 <small data-en="SAR / player" data-ar="ريال لكل لاعب">SAR / player</small></b>
+            </li>
+            <li>
+              <span data-en="10 sessions" data-ar="١٠ حصص">10 sessions</span>
+              <b>1,300 <small data-en="SAR / player" data-ar="ريال لكل لاعب">SAR / player</small></b>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pricegroup">
+          <h4 data-en="4 players" data-ar="٤ لاعبين">4 players</h4>
+          <ul class="pricelist">
+            <li>
+              <span data-en="5 sessions" data-ar="٥ حصص">5 sessions</span>
+              <b>700 <small data-en="SAR / player" data-ar="ريال لكل لاعب">SAR / player</small></b>
+            </li>
+            <li>
+              <span data-en="10 sessions" data-ar="١٠ حصص">10 sessions</span>
+              <b>1,200 <small data-en="SAR / player" data-ar="ريال لكل لاعب">SAR / player</small></b>
+            </li>
+          </ul>
+        </div>
+
+        <a class="btn btn--ghost btn--full" href="https://wa.me/966506940479" target="_blank" rel="noopener" data-en="Ask about coaching" data-ar="استفسر عن التدريب">Ask about coaching</a>
       </article>
     </div>
 
-    <p class="rates__note reveal" data-en="Table tennis is free for groups waiting on a booked court. Group, corporate and monthly packages available — just ask." data-ar="تنس الطاولة مجاني للمجموعات المنتظرة على ملعب محجوز. تتوفر باقات للمجموعات والشركات والاشتراك الشهري — استفسر عنها.">Table tennis is free for groups waiting on a booked court. Group, corporate and monthly packages available — just ask.</p>
+    <p class="rates__note reveal">
+      <span data-en="Booking a single court? Live prices and availability are on Playtomic." data-ar="تبي تحجز ملعب مرة وحدة؟ الأسعار والأوقات المتاحة مباشرة على بلايتوميك.">Booking a single court? Live prices and availability are on Playtomic.</span>
+      <a href="https://playtomic.com/clubs/padel-up-riyadh" target="_blank" rel="noopener" data-en="Check now →" data-ar="تحقق الآن ←">Check now →</a>
+    </p>
   </div>
 </section>
 
@@ -546,7 +619,7 @@
         </li>
         <li>
           <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/><path d="M10 5.5V10l3 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <span data-en="Open daily — 4 PM Sun–Wed, 3 PM Thu–Sat" data-ar="يومياً — ٤ عصراً الأحد‑الأربعاء، ٣ عصراً الخميس‑السبت">Open daily — 4 PM Sun–Wed, 3 PM Thu–Sat</span>
+          <span data-en="Open daily, 3 PM – 3 AM" data-ar="يومياً من ٣ عصراً حتى ٣ فجراً">Open daily, 3 PM – 3 AM</span>
         </li>
       </ul>
     </div>
@@ -639,13 +712,13 @@
           <h3 data-en="Opening hours" data-ar="ساعات العمل">Opening hours</h3>
           <table class="hours">
             <tbody>
-              <tr data-opens="16:00"><th data-en="Sunday"    data-ar="الأحد">Sunday</th>      <td dir="ltr">4:00 PM – 3:00 AM</td></tr>
-              <tr data-opens="16:00"><th data-en="Monday"    data-ar="الإثنين">Monday</th>    <td dir="ltr">4:00 PM – 3:00 AM</td></tr>
-              <tr data-opens="16:00"><th data-en="Tuesday"   data-ar="الثلاثاء">Tuesday</th>  <td dir="ltr">4:00 PM – 3:00 AM</td></tr>
-              <tr data-opens="16:00"><th data-en="Wednesday" data-ar="الأربعاء">Wednesday</th><td dir="ltr">4:00 PM – 3:00 AM</td></tr>
-              <tr data-opens="15:00"><th data-en="Thursday"  data-ar="الخميس">Thursday</th>   <td dir="ltr">3:00 PM – 4:00 AM</td></tr>
-              <tr data-opens="15:00"><th data-en="Friday"    data-ar="الجمعة">Friday</th>     <td dir="ltr">3:00 PM – 4:00 AM</td></tr>
-              <tr data-opens="15:00"><th data-en="Saturday"  data-ar="السبت">Saturday</th>    <td dir="ltr">3:00 PM – 4:00 AM</td></tr>
+              <tr data-opens="15:00"><th data-en="Sunday" data-ar="الأحد">Sunday</th><td dir="ltr">3:00 PM – 3:00 AM</td></tr>
+              <tr data-opens="15:00"><th data-en="Monday" data-ar="الإثنين">Monday</th><td dir="ltr">3:00 PM – 3:00 AM</td></tr>
+              <tr data-opens="15:00"><th data-en="Tuesday" data-ar="الثلاثاء">Tuesday</th><td dir="ltr">3:00 PM – 3:00 AM</td></tr>
+              <tr data-opens="15:00"><th data-en="Wednesday" data-ar="الأربعاء">Wednesday</th><td dir="ltr">3:00 PM – 3:00 AM</td></tr>
+              <tr data-opens="15:00"><th data-en="Thursday" data-ar="الخميس">Thursday</th><td dir="ltr">3:00 PM – 3:00 AM</td></tr>
+              <tr data-opens="15:00"><th data-en="Friday" data-ar="الجمعة">Friday</th><td dir="ltr">3:00 PM – 3:00 AM</td></tr>
+              <tr data-opens="15:00"><th data-en="Saturday" data-ar="السبت">Saturday</th><td dir="ltr">3:00 PM – 3:00 AM</td></tr>
             </tbody>
           </table>
         </div>

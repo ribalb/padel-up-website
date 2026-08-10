@@ -33,7 +33,7 @@ form that opens a pre-filled WhatsApp message · map, address and opening hours 
 Extras baked in: sticky nav with scroll-spy, EN⇄AR toggle with full RTL flip (remembered in
 `localStorage`, auto-selected from the browser language on first visit), scroll reveals,
 animated stat counters, today's row highlighted in the hours table and the hero "opens at"
-badge read off it (the club opens 4 PM Sun–Wed but 3 PM Thu–Sat), lazy-loaded responsive
+badge read off it, lazy-loaded responsive
 images, floating WhatsApp button, `SportsActivityLocation` JSON-LD for Google, and
 `prefers-reduced-motion` support.
 
@@ -76,16 +76,44 @@ To swap one out, replace both sizes (`name-600.webp` and `name-1200.webp`) keepi
 filenames, or edit the `<img>` in `index.html`. Clicking any gallery photo opens a lightbox
 (arrow keys and Esc work).
 
-## Before you publish — 3 things to fill in
+## Pricing — where the numbers came from, and the catch
 
-Address, phone, plus code, 4.4★ / 261 reviews, the three quoted reviews and the opening hours
-all come from the club's public Google listing and are accurate. These are not:
+Every figure in the Rates section is the club's own published pricing, transcribed from the
+Instagram story highlights (`الباقات`). Nothing is invented:
 
-**1. Rates** — `index.html`, `<section id="rates">`, marked `TODO(owner)`.
-The SAR figures (120 / 160 / 200) are illustrative. Replace the `<span class="num">` values
-and the time windows in `.rate__when` with your real pricing.
+- **Court packages** — 60 min: 10 for 2,500 SAR (250 each), 20 for 4,600 SAR (230 each).
+  90 min: 10 for 3,200 SAR (320 each), 20 for 5,900 SAR (295 each).
+- **Private coaching**, 60 min — 1 player 380 SAR; 2 players 200 each; 3 players 150 each;
+  4 players 130 each.
+- **Group coaching** — 3 players: 5 sessions 700 SAR/player, 10 sessions 1,300 SAR/player.
+  4 players: 5 sessions 700 SAR/player, 10 sessions 1,200 SAR/player.
 
-**2. Amenity claims** — the six chips under the sports section (free parking, card & Apple Pay,
+**The catch: those highlights were posted ~183 weeks ago — roughly three and a half years.**
+They are the club's real prices, but they may well be out of date. Check them before you point
+customers here. The working-hours highlight is far newer (~10 weeks), so it is more trustworthy.
+
+There is deliberately **no single-court walk-up rate on the page.** The stories don't give one,
+and the package prices only imply a per-booking floor. Rather than guess, the section ends with
+a link to Playtomic, which carries live prices and availability.
+
+## Opening hours — a conflict you should resolve
+
+Two sources disagree:
+
+| Source | Hours |
+| --- | --- |
+| Instagram story highlight (`أوقات العمل`, ~10 weeks old) | **3:00 PM – 3:00 AM, every day** |
+| Google Business listing (read today) | 4 PM–3 AM Sun–Wed, 3 PM–4 AM Thu–Sat |
+
+The site uses the Instagram version, on the grounds that it's the club stating its own hours
+rather than a listing that may have drifted. If Google is the correct one, update the `<tbody>`
+in `<section id="visit">`, the `data-opens` attribute on each row, and the
+`openingHoursSpecification` in the JSON-LD. Either way it's worth fixing the Google listing so
+the two agree — it's the first thing most customers see.
+
+## Still to verify
+
+**Amenity claims** — the six chips under the sports section (free parking, card & Apple Pay,
 shade, snacks, late slots) are reasonable for a club like yours but unverified. Delete any that
 don't apply.
 
@@ -111,13 +139,15 @@ If the Playtomic URL ever changes, it appears 10 times in `index.html` — find 
 
 ## Still not on the site
 
-From [@padel_up](https://www.instagram.com/padel_up/) (11.4K followers) — the club is a good
-deal more than a place to rent a court:
+From [@padel_up](https://www.instagram.com/padel_up/) (11.4K followers):
 
-- **Coaching, an academy, and corporate packages.** The page only sells court time.
 - **Theeb Padel League 2026 champions**, a competitive team, a head coach and named players.
   That's a strong trust section the page is missing entirely.
+- **Corporate packages** are advertised in the bio but have no published rates, so there's
+  nothing to put on the page yet.
 - The **½M / Half Million** partnership.
+
+Coaching and the academy *are* now covered, via the Rates section.
 
 ## Colour
 
