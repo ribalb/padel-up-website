@@ -694,7 +694,7 @@ html[lang="ar"] .footer h4{ letter-spacing:0; }
 }
 .footer__rating strong{ color:var(--accent-text); }
 
-/* ---------- whatsapp fab ---------- */
+/* ---------- floating call + whatsapp buttons ---------- */
 .fab{
   position:fixed; inset-inline-end:20px; bottom:20px; z-index:90;
   width:54px; height:54px; border-radius:50%; display:grid; place-items:center;
@@ -705,6 +705,12 @@ html[lang="ar"] .footer h4{ letter-spacing:0; }
 .fab.is-shown{ opacity:1; transform:none; pointer-events:auto; }
 .fab:hover{ transform:scale(1.08); }
 .fab svg{ width:28px; height:28px; }
+/* the call button stacks directly above the WhatsApp one */
+.fab--call{
+  bottom:84px;
+  background:var(--accent); color:var(--on-accent);
+  box-shadow:0 12px 30px -8px rgba(var(--accent-rgb),.6);
+}
 
 /* ---------- reveal / motion ---------- */
 .reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s var(--ease), transform .7s var(--ease); }

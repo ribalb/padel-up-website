@@ -16,12 +16,12 @@
   var nav      = $('#nav');
   var navLinks = $('#navLinks');
   var burger   = $('#burger');
-  var fab      = $('.fab');
+  var fabs     = $$('.fab');
 
   function onScroll() {
     var y = window.scrollY;
     nav.classList.toggle('is-stuck', y > 24);
-    if (fab) fab.classList.toggle('is-shown', y > 500);
+    fabs.forEach(function (fab) { fab.classList.toggle('is-shown', y > 500); });
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
