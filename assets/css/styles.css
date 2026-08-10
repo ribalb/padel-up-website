@@ -673,7 +673,7 @@ html[lang="ar"] .footer h4{ letter-spacing:0; }
 .footer__nav a:hover,.footer__contact a:hover{ color:var(--accent-text); }
 
 /* brand marks shown as logos rather than words */
-.social{ display:flex; gap:10px; margin-top:6px; }
+.social{ display:flex; gap:10px; margin-top:6px; flex-wrap:wrap; }
 .social__link{
   display:grid; place-items:center; width:40px; height:40px; border-radius:12px;
   border:1px solid var(--line-strong); color:var(--muted);
