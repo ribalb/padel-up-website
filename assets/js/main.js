@@ -149,12 +149,13 @@
     try { localStorage.setItem('padelup-lang', lang); } catch (e) { /* private mode */ }
   }
 
+  /* Arabic is the served default — the markup ships Arabic text and dir="rtl", so a
+     first-time visitor never sees a flash of English. Applying it again on load is a
+     no-op for the text and also syncs the bits that only live in JS (placeholders,
+     the toggle label). Only a returning visitor who chose English gets switched. */
   var savedLang;
   try { savedLang = localStorage.getItem('padelup-lang'); } catch (e) { savedLang = null; }
-  if (!savedLang) {
-    savedLang = (navigator.language || 'en').toLowerCase().indexOf('ar') === 0 ? 'ar' : 'en';
-  }
-  applyLang(savedLang);
+  applyLang(savedLang === 'en' ? 'en' : 'ar');
 
   langBtn.addEventListener('click', function () {
     applyLang(document.documentElement.lang === 'ar' ? 'en' : 'ar');

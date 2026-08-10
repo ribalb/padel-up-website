@@ -31,7 +31,7 @@ Hero with live rating · sports overview (padel / football / table tennis) · am
 form that opens a pre-filled WhatsApp message · map, address and opening hours · FAQ · footer.
 
 Extras baked in: sticky nav with scroll-spy, EN⇄AR toggle with full RTL flip (remembered in
-`localStorage`, auto-selected from the browser language on first visit), scroll reveals,
+`localStorage`), scroll reveals,
 animated stat counters, today's row highlighted in the hours table and the hero "opens at"
 badge read off it, lazy-loaded responsive
 images, floating WhatsApp button, `SportsActivityLocation` JSON-LD for Google, and
@@ -190,16 +190,32 @@ It's a static site, so anything works. The quickest free options:
 Once it's live, add the URL to the Google Business Profile (the listing currently shows
 "Add website") — that link is the main reason to have this page.
 
-## Editing text
+## Language
+
+**The site opens in Arabic.** That is baked into the served markup, not applied by JavaScript:
+`<html lang="ar" dir="rtl">` and every element's visible text is the Arabic one. So the first
+paint is already Arabic and right-to-left — there is no flash of English, and it stays correct
+with JavaScript disabled.
 
 Every translated string carries both languages on the same element:
 
 ```html
-<h3 data-en="Padel courts" data-ar="ملاعب البادل">Padel courts</h3>
+<h3 data-en="Padel courts" data-ar="ملاعب البادل">ملاعب البادل</h3>
 ```
 
-The visible text is the English fallback for anyone with JavaScript off. When you edit copy,
-change all three: the `data-en` attribute, the `data-ar` attribute, and the inner text.
+The toggle swaps `lang`/`dir` and rewrites the text from these attributes; the choice is stored
+in `localStorage`, so a visitor who picks English keeps English on their next visit. Form
+placeholders use the same pattern with `data-ph-en` / `data-ph-ar`.
+
+**When editing copy, change all three:** the `data-en` attribute, the `data-ar` attribute, and
+the inner text (which must stay identical to `data-ar`). If the inner text and `data-ar` drift
+apart, the page will visibly change the moment JavaScript runs.
+
+The three Google reviews are a deliberate exception: the Arabic original is always shown, and
+the English translation beneath it carries `hidden` and is revealed only in English mode.
+
+The layout needs no separate RTL stylesheet — it uses CSS logical properties throughout, so the
+whole page mirrors from the `dir` attribute alone.
 
 ## Browser support
 
