@@ -1,0 +1,14 @@
+# local tool/editor state, not project content
+.claude/settings.local.json
+.vscode/
+.idea/
+
+# OS cruft
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# in case a build/tooling step is ever added
+node_modules/
+*.log
