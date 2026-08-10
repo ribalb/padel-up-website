@@ -8,20 +8,13 @@ every push to `main` redeploys within a minute or two).
 
 ```
 padel up/
-├── index.html              the site — lime accent (both languages live in data-en / data-ar attributes)
-├── index-blue.html         same page, blue accent — a throwaway for comparing the two
+├── index.html              the whole site (both languages live in data-en / data-ar attributes)
 ├── assets/
 │   ├── css/styles.css      design tokens + all styling
-│   ├── css/theme-blue.css  accent overrides only, loaded on top by index-blue.html
 │   ├── js/main.js          nav, language switch, reveals, counters, lightbox, WhatsApp form
-│   └── img/                photos + favicon
+│   └── img/                photos, logo, favicon
 └── README.md
 ```
-
-**Pick a colour, then delete the loser.** `index-blue.html` and `theme-blue.css` exist purely so
-you can compare. Once you've chosen: keep lime → delete both files; keep blue → copy the seven
-token values out of `theme-blue.css` into the accent block in `styles.css`, then delete both
-files. Don't ship both — two copies of the same page will drift apart and confuse search engines.
 
 ## Run it
 
@@ -43,6 +36,14 @@ animated stat counters, today's row highlighted in the hours table and the hero 
 badge read off it (the club opens 4 PM Sun–Wed but 3 PM Thu–Sat), lazy-loaded responsive
 images, floating WhatsApp button, `SportsActivityLocation` JSON-LD for Google, and
 `prefers-reduced-motion` support.
+
+## Logo
+
+`assets/img/logo.png` (160px) and `favicon.png` (64px) were extracted from the logo artwork:
+cropped to the badge circle, masked round so the corners are transparent, and one row of stray
+dashed rule healed out of the bottom. The badge is used as the nav and footer mark and as the
+favicon. If you have the original vector, an SVG would be sharper — drop it in and swap the two
+`<img>` references plus the `<link rel="icon">`.
 
 ## Photos
 
@@ -118,25 +119,28 @@ deal more than a place to rent a court:
   That's a strong trust section the page is missing entirely.
 - The **½M / Half Million** partnership.
 
-## Changing the accent colour
+## Colour
 
-Every accent in the page — buttons, the gradient headline, ticks, badges, focus rings, glows,
-hover tints — resolves from seven tokens in the accent block at the top of `styles.css`. Nothing
-is hardcoded, so a re-skin is those seven lines and nothing else. `theme-blue.css` is exactly
-that block, overridden:
+The palette is sampled from the club logo, not guessed. Reading the logo PNG pixel by pixel:
+the badge sits on a near-black navy `#000014`, the swoosh is `#001466`, the type is white.
 
-```css
---accent:      #3b82ff;      /* primary accent */
---accent-hi:   #5c99ff;      /* lightened, for :hover */
---accent-dim:  #2563eb;      /* darkened */
---accent2:     #67e8f9;      /* gradient partner */
---accent-rgb:  59,130,255;   /* --accent as rgb, for rgba() tints */
---accent2-rgb: 103,232,249;
---on-accent:   #ffffff;      /* text on an accent fill — white on blue, near-black on lime */
-```
+`#001466` cannot be used as an accent — on a near-black page it's invisible. So `--accent` keeps
+the logo's hue (229°) and lifts the lightness until it carries. The literal logo blue is kept as
+`--accent-deep` for fills that sit behind text.
 
-`--on-accent` is the one to watch: dark ink reads on lime, white reads on blue. Get that wrong
-and every primary button loses its contrast.
+There are **two** accent values on purpose, and this is the part to not "simplify" later:
+
+| Token | Value | Contrast | For |
+| --- | --- | --- | --- |
+| `--accent` | `#3358ff` | **5.28:1** with white on top | button and badge *fills* |
+| `--accent-text` | `#7f9cff` | **7.76:1** on the page ground | accent used *as text* or icons |
+
+`--accent` as text on the navy only reaches 3.81:1, which fails WCAG AA for body-size text — so
+every `color:` use points at `--accent-text` instead. Collapsing the two back into one will fail
+accessibility at one end or the other, whichever you pick.
+
+Everything else — the gradient headline, ticks, focus rings, glows, hover tints — resolves from
+the same token block, so a re-skin is that block and nothing else.
 
 ## Contact details
 
