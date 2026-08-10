@@ -3,6 +3,9 @@
 A modern, bilingual (English / العربية) one-page site for **Padel UP**, the sports club in
 Al Diriyah Al Jadidah, Riyadh. Plain HTML, CSS and JavaScript — no build step, no dependencies.
 
+**Live:** <https://ribalb.github.io/padel-up-website/> (GitHub Pages, served from `main` / root —
+every push to `main` redeploys within a minute or two).
+
 ```
 padel up/
 ├── index.html              the site — lime accent (both languages live in data-en / data-ar attributes)
@@ -85,9 +88,9 @@ and the time windows in `.rate__when` with your real pricing.
 shade, snacks, late slots) are reasonable for a club like yours but unverified. Delete any that
 don't apply.
 
-**3. `og:image`** — `index.html` `<head>`, marked `TODO(owner)`. It's a relative path; once the
-domain is live make it absolute (`https://yourdomain.com/assets/img/courts-avenue-1200.webp`)
-so WhatsApp and X render the preview card.
+**3. The domain.** `og:url`, `og:image` and `<link rel="canonical">` in `<head>` are absolute
+URLs pointing at `ribalb.github.io`. They have to be absolute for WhatsApp/X link previews to
+work, so if the site moves to a custom domain, update all three or the preview card breaks.
 
 ## Booking
 
