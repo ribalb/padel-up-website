@@ -140,6 +140,13 @@
       el.placeholder = el.getAttribute(isAr ? 'data-ph-ar' : 'data-ph-en');
     });
 
+    /* icon-only links carry their label in aria-label/title rather than as text */
+    $$('[data-al-en][data-al-ar]').forEach(function (el) {
+      var label = el.getAttribute(isAr ? 'data-al-ar' : 'data-al-en');
+      el.setAttribute('aria-label', label);
+      el.setAttribute('title', label);
+    });
+
     /* review bodies: show the Arabic original alone when browsing in Arabic */
     $$('.review .en').forEach(function (el) { el.hidden = isAr; });
 

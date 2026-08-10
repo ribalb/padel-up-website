@@ -204,8 +204,18 @@ Every translated string carries both languages on the same element:
 ```
 
 The toggle swaps `lang`/`dir` and rewrites the text from these attributes; the choice is stored
-in `localStorage`, so a visitor who picks English keeps English on their next visit. Form
-placeholders use the same pattern with `data-ph-en` / `data-ph-ar`.
+in `localStorage`, so a visitor who picks English keeps English on their next visit. Two
+variants of the same pattern exist for things that aren't text nodes:
+
+| Attributes | Used for |
+| --- | --- |
+| `data-en` / `data-ar` | element text |
+| `data-ph-en` / `data-ph-ar` | form `placeholder` |
+| `data-al-en` / `data-al-ar` | `aria-label` **and** `title` on icon-only links |
+
+The last one matters for the footer's icon buttons — WhatsApp and Instagram are brand names that
+stay put, but "Directions" has to translate or the icon is unlabelled for screen readers in one
+language.
 
 **When editing copy, change all three:** the `data-en` attribute, the `data-ar` attribute, and
 the inner text (which must stay identical to `data-ar`). If the inner text and `data-ar` drift
